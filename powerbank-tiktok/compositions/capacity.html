@@ -1,0 +1,40 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Archivo Black", sans-serif; color: #fff; }
+    .row { position: absolute; left: 70px; width: 830px; text-align: center; }
+    .big { display: inline-block; font-size: 100px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase;
+           -webkit-text-stroke: 14px #000; paint-order: stroke fill; text-shadow: 0 10px 0 #000; }
+    .hl { display: inline-block; background: #FFE14A; color: #111; font-size: 88px; line-height: 1; padding: 18px 34px 22px;
+          text-transform: uppercase; border-radius: 18px; box-shadow: 0 12px 0 #000; transform: rotate(-2deg); }
+    .sub { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 50px; line-height: 1.15;
+           color: #fff; background: rgba(10,10,12,.72); padding: 14px 28px 16px; border-radius: 16px; }
+    .y { color: #FFE14A; }
+
+    #cap-b { top: 330px; }
+    #cap-a { top: 430px; }
+    #cap-num { font-size: 190px; color: #FFE14A; }
+    #cap-unit { font-size: 80px; margin-left: 10px; text-transform: none; }
+
+  </style>
+  <div id="root" data-composition-id="capacity" data-width="1080" data-height="1920">
+
+    <div id="cap-g" class="clip" data-start="0" data-duration="1.7">
+      <div id="cap-a" class="row"><span class="big" id="cap-num">0</span><span class="big" id="cap-unit">mAh</span></div>
+      <div id="cap-b" class="row"><span class="sub" id="cap-sub">Battery energy</span></div>
+    </div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    const c = { v: 0 };
+    const numEl = document.querySelector("#cap-num");
+    tl.fromTo(c, { v: 0 }, { v: 6000, duration: 0.95, ease: "power2.out",
+      onUpdate: () => { numEl.textContent = String(Math.round(c.v / 10) * 10); } }, 0.1);
+    tl.fromTo("#cap-num", { scale: 1 }, { scale: 1.12, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, 1.05);
+    tl.fromTo("#cap-sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.0);
+    tl.to(["#cap-a", "#cap-sub"], { opacity: 0, filter: "blur(8px)", duration: 0.13, ease: "power2.in" }, 1.55);
+
+    window.__timelines["capacity"] = tl;
+  </script>
+</template>

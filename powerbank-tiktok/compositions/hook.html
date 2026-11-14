@@ -1,0 +1,46 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Archivo Black", sans-serif; color: #fff; }
+    .row { position: absolute; left: 70px; width: 830px; text-align: center; }
+    .big { display: inline-block; font-size: 100px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase;
+           -webkit-text-stroke: 14px #000; paint-order: stroke fill; text-shadow: 0 10px 0 #000; }
+    .hl { display: inline-block; background: #FFE14A; color: #111; font-size: 88px; line-height: 1; padding: 18px 34px 22px;
+          text-transform: uppercase; border-radius: 18px; box-shadow: 0 12px 0 #000; transform: rotate(-2deg); }
+    .sub { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 50px; line-height: 1.15;
+           color: #fff; background: rgba(10,10,12,.72); padding: 14px 28px 16px; border-radius: 16px; }
+    .y { color: #FFE14A; }
+
+    #hook-a { top: 330px; }
+    #hook-a .big { font-size: 78px; }
+    #hook-b { top: 450px; }
+    #hook-b .big { font-size: 200px; color: #FFE14A; transform-origin: 50% 50%; }
+    .arrow { position: absolute; top: 560px; width: 90px; height: 90px; }
+    #hook-arL { left: 30px; } #hook-arR { right: 30px; }
+    #hook-c { top: 380px; }
+    #hook-c .big { font-size: 84px; }
+    #hook-d { top: 530px; }
+
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+
+    <div id="hook-q" class="clip" data-start="0" data-duration="1.6">
+      <div id="hook-a" class="row"><span class="big">Cari powerbank</span></div>
+      <div id="hook-b" class="row"><span class="big" id="hook-word">NIPIS?</span></div>
+    </div>
+    <div id="hook-ans" class="clip" data-start="1.6" data-duration="1.1">
+      <div id="hook-c" class="row"><span class="big">Ni jawapan dia</span></div>
+      <div id="hook-d" class="row"><span class="hl" id="hook-pill">Handin Magnetic</span></div>
+    </div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#hook-word", { scaleY: 1.5, scaleX: 0.9 }, { scaleY: 1, scaleX: 1, duration: 0.5, ease: "back.out(2.2)" }, 0);
+    tl.to(["#hook-a", "#hook-b"], { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, 1.45);
+    tl.fromTo("#hook-c", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 1.6);
+    tl.fromTo("#hook-pill", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 1.72);
+
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

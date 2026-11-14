@@ -1,0 +1,7 @@
+# Large source footage (re-create with fetch-footage.sh)
+assets/footage/
+# Regenerable HyperFrames caches/snapshots
+.hyperframes/artifacts/
+.hyperframes/cache/
+.hyperframes/preview/
+.hyperframes/video-state-lock

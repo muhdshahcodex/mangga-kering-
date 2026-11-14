@@ -1,0 +1,45 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Archivo Black", sans-serif; color: #fff; }
+    .row { position: absolute; left: 70px; width: 830px; text-align: center; }
+    .big { display: inline-block; font-size: 100px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase;
+           -webkit-text-stroke: 14px #000; paint-order: stroke fill; text-shadow: 0 10px 0 #000; }
+    .hl { display: inline-block; background: #FFE14A; color: #111; font-size: 88px; line-height: 1; padding: 18px 34px 22px;
+          text-transform: uppercase; border-radius: 18px; box-shadow: 0 12px 0 #000; transform: rotate(-2deg); }
+    .sub { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 50px; line-height: 1.15;
+           color: #fff; background: rgba(10,10,12,.72); padding: 14px 28px 16px; border-radius: 16px; }
+    .y { color: #FFE14A; }
+
+    #cta-a { top: 320px; }
+    #cta-a .big { font-size: 130px; }
+    #cta-b { top: 490px; }
+    #cta-btn { display: inline-flex; align-items: center; gap: 26px; background: #FFE14A; color: #111; font-size: 50px; white-space: nowrap;
+               padding: 22px 36px 26px; border-radius: 999px; border: 7px solid #000; box-shadow: 0 14px 0 #000; text-transform: uppercase; }
+    #cta-c { top: 640px; }
+    #cta-arrow { position: absolute; left: 150px; top: 780px; width: 170px; height: 300px; }
+
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
+
+    <div id="cta-g" class="clip" data-start="0" data-duration="3.5">
+      <div id="cta-a" class="row"><span class="big" id="cta-head">Nak satu?</span></div>
+      <div id="cta-b" class="row"><span id="cta-btn">
+        <svg width="64" height="64" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z" fill="#111"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10" stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+        Tekan beg kuning</span></div>
+      <div id="cta-c" class="row"><span class="sub" id="cta-sub">Grab <span class="y">sekarang!</span></span></div>
+      <svg id="cta-arrow" viewBox="0 0 100 180"><path id="cta-arrow-path" d="M70 5 C 80 70, 60 120, 25 160 M25 160 L20 120 M25 160 L60 145" stroke="#FFE14A" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#cta-head", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "expo.out" }, 0.0);
+    tl.fromTo("#cta-btn", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)" }, 0.25);
+    tl.fromTo("#cta-sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.65);
+    tl.fromTo("#cta-arrow-path", { strokeDasharray: 400, strokeDashoffset: 400 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, 0.9);
+    tl.fromTo("#cta-btn", { scale: 1 }, { scale: 1.07, duration: 0.15, immediateRender: false, yoyo: true, repeat: 1, ease: "power2.out" }, 1.9);
+
+    window.__timelines["cta"] = tl;
+  </script>
+</template>

@@ -1,0 +1,42 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Archivo Black", sans-serif; color: #fff; }
+    .row { position: absolute; left: 70px; width: 830px; text-align: center; }
+    .big { display: inline-block; font-size: 100px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase;
+           -webkit-text-stroke: 14px #000; paint-order: stroke fill; text-shadow: 0 10px 0 #000; }
+    .hl { display: inline-block; background: #FFE14A; color: #111; font-size: 88px; line-height: 1; padding: 18px 34px 22px;
+          text-transform: uppercase; border-radius: 18px; box-shadow: 0 12px 0 #000; transform: rotate(-2deg); }
+    .sub { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 50px; line-height: 1.15;
+           color: #fff; background: rgba(10,10,12,.72); padding: 14px 28px 16px; border-radius: 16px; }
+    .y { color: #FFE14A; }
+
+    #chk-card { position: absolute; left: 80px; top: 420px; width: 800px; padding: 44px 50px; border-radius: 34px;
+                background: rgba(12,12,14,.8); border: 5px solid #FFE14A; }
+    .item { display: flex; align-items: center; gap: 30px; font-size: 68px; line-height: 1.5; text-transform: uppercase; }
+    .tick { width: 76px; height: 76px; flex: none; }
+
+  </style>
+  <div id="root" data-composition-id="checks" data-width="1080" data-height="1920">
+
+    <div id="chk-g" class="clip" data-start="0" data-duration="2">
+      <div id="chk-card">
+        <div class="item" id="chk-1"><svg class="tick" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FFE14A"/><path d="M6 12.5l4 4 8-9" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/></svg>Nipis</div>
+        <div class="item" id="chk-2"><svg class="tick" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FFE14A"/><path d="M6 12.5l4 4 8-9" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/></svg>Magnetic</div>
+        <div class="item" id="chk-3"><svg class="tick" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FFE14A"/><path d="M6 12.5l4 4 8-9" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/></svg>Wireless 15W</div>
+        <div class="item" id="chk-4"><svg class="tick" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FFE14A"/><path d="M6 12.5l4 4 8-9" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/></svg>Laju 20W</div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#chk-card", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 0);
+    ["#chk-1", "#chk-2", "#chk-3", "#chk-4"].forEach((id, i) => {
+      tl.fromTo(id, { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, 0.1 + i * 0.25);
+    });
+    tl.to("#chk-card", { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, 1.83);
+
+    window.__timelines["checks"] = tl;
+  </script>
+</template>
