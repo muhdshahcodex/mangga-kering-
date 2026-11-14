@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "16ff6781-4da3-411b-9605-8ffd8a5ba819",
-  "currentRevision": "f339c16b-e62d-49d1-9966-1d0110785b5c",
+  "currentRevision": "42e4cf46-23b3-4f94-94f1-a7f53dfcc352",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -111,6 +111,10 @@
     "assets/footage/clip5.mp4": {
       "hash": "dd8b73a596478410236dfa77f54eab5f94deac72756ddfcfd7e9920281966338",
       "content": "/root/.cache/hyperframes/history/16ff6781-4da3-411b-9605-8ffd8a5ba819/blobs/dd/dd8b73a596478410236dfa77f54eab5f94deac72756ddfcfd7e9920281966338"
+    },
+    "fetch-footage.sh": {
+      "hash": "c8c5176d129460076b3b17d17523c3405cd700f67737aac20db72b7f4e715af3",
+      "content": "/root/.cache/hyperframes/history/16ff6781-4da3-411b-9605-8ffd8a5ba819/blobs/c8/c8c5176d129460076b3b17d17523c3405cd700f67737aac20db72b7f4e715af3"
     }
   },
   "revisions": {
@@ -202,12 +206,27 @@
           "after": "/root/.cache/hyperframes/history/16ff6781-4da3-411b-9605-8ffd8a5ba819/blobs/b6/b6a6d83d92fc773e3f4b287e8f20f749e0aef17f0cbca1b8a5846adb5811745f"
         }
       }
+    },
+    "42e4cf46-23b3-4f94-94f1-a7f53dfcc352": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794677536954,
+      "endedAt": 1794677536956,
+      "files": {
+        "fetch-footage.sh": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/16ff6781-4da3-411b-9605-8ffd8a5ba819/blobs/c8/c8c5176d129460076b3b17d17523c3405cd700f67737aac20db72b7f4e715af3"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": "f339c16b-e62d-49d1-9966-1d0110785b5c",
-      "id": "fb0b5d5d-9532-4e17-a60a-14c2a196115b"
+      "revision": "42e4cf46-23b3-4f94-94f1-a7f53dfcc352",
+      "id": "57b681c3-3f6a-4866-9c35-6308d19945b5"
     },
     "revisions": {
       "31d60467-3b97-4fba-96fa-6e7c23b6e684": [
@@ -281,6 +300,43 @@
           "contentHash": "523c7bb6a64aa992f0833630d12c7bdadae3d1b58f975ed2246b7a7f396987f5",
           "revision": "f339c16b-e62d-49d1-9966-1d0110785b5c",
           "inputFingerprint": "bac67d7e35283303d2c87d28a303c1a391221dd3c7b4726d194547e3c54c453b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "42e4cf46-23b3-4f94-94f1-a7f53dfcc352": [
+        {
+          "id": "57b681c3-3f6a-4866-9c35-6308d19945b5",
+          "scope": "project",
+          "report": "/home/user/mangga-kering-/powerbank-tiktok/.hyperframes/artifacts/checks/57b681c3-3f6a-4866-9c35-6308d19945b5.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1794677545519,
+          "contentHash": "523c7bb6a64aa992f0833630d12c7bdadae3d1b58f975ed2246b7a7f396987f5",
+          "revision": "42e4cf46-23b3-4f94-94f1-a7f53dfcc352",
+          "inputFingerprint": "0e4c7002eb09bb2bc9ae04317d31e742656ea9cbefb0da88b55cbfbf8c1b7f28",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
@@ -670,13 +726,14 @@
   },
   "renders": {
     "latest": {
-      "id": "211955d8-ade5-4324-9322-fdcecc7e8b30",
-      "completedAt": 1794677248503,
-      "output": "/home/user/mangga-kering-/preview-draft.mp4",
+      "id": "97c629fc-cc7c-4322-90c4-7a663a529ea9",
+      "completedAt": 1794677626726,
+      "output": "/home/user/mangga-kering-/handin-powerbank-final.mp4",
       "status": "completed",
-      "revision": "f339c16b-e62d-49d1-9966-1d0110785b5c"
+      "revision": "42e4cf46-23b3-4f94-94f1-a7f53dfcc352"
     },
     "retainedRevisions": [
+      "42e4cf46-23b3-4f94-94f1-a7f53dfcc352",
       "f339c16b-e62d-49d1-9966-1d0110785b5c"
     ]
   },
